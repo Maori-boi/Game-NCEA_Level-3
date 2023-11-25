@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://ce4uks4u5lstf"]
+
+[ext_resource type="Script" path="res://Lava.gd" id="1_ijyc5"]
+
+[sub_resource type="Gradient" id="Gradient_jns6s"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.00543478, 0.646739, 0.777174, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.733333, 0, 0, 1, 0.898039, 0.407843, 0, 1, 0.866667, 0.694118, 0.0470588, 1, 1, 1, 1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_2c1fb"]
+frequency = 0.004
+offset = Vector3(0, 2056.87, 411.406)
+fractal_type = 3
+fractal_octaves = 2
+fractal_lacunarity = 1.4
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_rawid"]
+in_3d_space = true
+color_ramp = SubResource("Gradient_jns6s")
+noise = SubResource("FastNoiseLite_2c1fb")
+
+[node name="Lava" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ijyc5")
+speed = Vector3(0, 50, 10)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.98
+offset_right = 7.0
+offset_bottom = -0.0400391
+texture = SubResource("NoiseTexture2D_rawid")

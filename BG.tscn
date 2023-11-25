@@ -1,0 +1,52 @@
+[gd_scene load_steps=4 format=3 uid="uid://daxk628swqgsp"]
+
+[ext_resource type="Script" path="res://BG.gd" id="1_tvdf6"]
+[ext_resource type="Texture2D" uid="uid://cqrqnlx2jpsop" path="res://Assets/Background/Background.png" id="2_wo33p"]
+[ext_resource type="Texture2D" uid="uid://5xvqru1b7s48" path="res://Assets/Background/country-platform-forest.png" id="3_giry6"]
+
+[node name="BG" type="ParallaxBackground"]
+script = ExtResource("1_tvdf6")
+
+[node name="BackGround_One" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(1152, 0)
+
+[node name="Back" type="Sprite2D" parent="BackGround_One"]
+position = Vector2(576, 324)
+scale = Vector2(2.4, 2.382)
+texture = ExtResource("2_wo33p")
+
+[node name="BackGround_Two" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.7, 1)
+motion_mirroring = Vector2(1280, 0)
+
+[node name="Trees" type="Sprite2D" parent="BackGround_Two"]
+position = Vector2(80, 533)
+texture = ExtResource("3_giry6")
+
+[node name="Trees2" type="Sprite2D" parent="BackGround_Two"]
+position = Vector2(240, 533)
+texture = ExtResource("3_giry6")
+
+[node name="Trees3" type="Sprite2D" parent="BackGround_Two"]
+position = Vector2(400, 533)
+texture = ExtResource("3_giry6")
+
+[node name="Trees4" type="Sprite2D" parent="BackGround_Two"]
+position = Vector2(560, 533)
+texture = ExtResource("3_giry6")
+
+[node name="Trees5" type="Sprite2D" parent="BackGround_Two"]
+position = Vector2(720, 533)
+texture = ExtResource("3_giry6")
+
+[node name="Trees6" type="Sprite2D" parent="BackGround_Two"]
+position = Vector2(880, 533)
+texture = ExtResource("3_giry6")
+
+[node name="Trees7" type="Sprite2D" parent="BackGround_Two"]
+position = Vector2(1040, 533)
+texture = ExtResource("3_giry6")
+
+[node name="Trees8" type="Sprite2D" parent="BackGround_Two"]
+position = Vector2(1200, 533)
+texture = ExtResource("3_giry6")

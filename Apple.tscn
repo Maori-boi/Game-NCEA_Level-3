@@ -1,0 +1,183 @@
+[gd_scene load_steps=21 format=3 uid="uid://b7svcjixyg8g7"]
+
+[ext_resource type="Script" path="res://Apple.gd" id="1_lcg2w"]
+[ext_resource type="Texture2D" uid="uid://duo1bk8kc4n6" path="res://Explosions/explosion-6.png" id="2_q8rbb"]
+[ext_resource type="Texture2D" uid="uid://ce76jlsqmrsgo" path="res://Assets/Rubbish/Apple Final2.png" id="3_326ai"]
+[ext_resource type="AudioStream" uid="uid://dudq63guxvkyq" path="res://Audio/explosion-6055.mp3" id="4_kaxe7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ie2ur"]
+atlas = ExtResource("2_q8rbb")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y2e7e"]
+atlas = ExtResource("2_q8rbb")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h8r34"]
+atlas = ExtResource("2_q8rbb")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jdp6o"]
+atlas = ExtResource("2_q8rbb")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wv451"]
+atlas = ExtResource("2_q8rbb")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jsohh"]
+atlas = ExtResource("2_q8rbb")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_klu13"]
+atlas = ExtResource("2_q8rbb")
+region = Rect2(288, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rtucg"]
+atlas = ExtResource("2_q8rbb")
+region = Rect2(336, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oq40b"]
+atlas = ExtResource("3_326ai")
+region = Rect2(0, 50, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f21ax"]
+atlas = ExtResource("3_326ai")
+region = Rect2(0, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iy6tw"]
+atlas = ExtResource("3_326ai")
+region = Rect2(50, 0, 50, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8q4n3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ie2ur")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y2e7e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h8r34")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jdp6o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wv451")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jsohh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_klu13")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rtucg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oq40b")
+}],
+"loop": false,
+"name": &"Death",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f21ax")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f21ax")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iy6tw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iy6tw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iy6tw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f21ax")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iy6tw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iy6tw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iy6tw")
+}],
+"loop": true,
+"name": &"Run",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e87tq"]
+size = Vector2(23.699, 25.1505)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qcsbu"]
+radius = 22.179
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d3xad"]
+size = Vector2(25.5755, 22.0399)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0qxl7"]
+size = Vector2(23.3461, 17.1644)
+
+[node name="Apple" type="CharacterBody2D"]
+script = ExtResource("1_lcg2w")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_8q4n3")
+animation = &"Run"
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3, 2.5)
+scale = Vector2(0.759526, 0.755452)
+shape = SubResource("RectangleShape2D_e87tq")
+metadata/_edit_lock_ = true
+
+[node name="PlayerDetection" type="Area2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="PlayerDetectionShape" type="CollisionShape2D" parent="PlayerDetection"]
+position = Vector2(-3, 2)
+scale = Vector2(1.33737, 0.461071)
+shape = SubResource("CircleShape2D_qcsbu")
+
+[node name="PlayerDeath" type="Area2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="PlayerDeathShape" type="CollisionShape2D" parent="PlayerDeath"]
+position = Vector2(-3, 1.99999)
+scale = Vector2(0.782, 0.907444)
+shape = SubResource("RectangleShape2D_d3xad")
+
+[node name="PlayerCollision" type="Area2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="PlayerCollisionShape" type="CollisionShape2D" parent="PlayerCollision"]
+position = Vector2(-3, 6.00001)
+scale = Vector2(1.02801, 0.699123)
+shape = SubResource("RectangleShape2D_0qxl7")
+
+[node name="Explosive_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_kaxe7")
+bus = &"ExplosionSFX"
+
+[connection signal="body_entered" from="PlayerDetection" to="." method="_on_player_detection_body_entered"]
+[connection signal="body_exited" from="PlayerDetection" to="." method="_on_player_detection_body_exited"]
+[connection signal="body_entered" from="PlayerDeath" to="." method="_on_player_death_body_entered"]
+[connection signal="body_entered" from="PlayerCollision" to="." method="_on_player_collision_body_entered"]

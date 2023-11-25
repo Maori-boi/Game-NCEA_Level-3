@@ -1,0 +1,212 @@
+[gd_scene load_steps=17 format=3 uid="uid://4eh3og5i0xj2"]
+
+[ext_resource type="Texture2D" uid="uid://dknnxwjt1n8bj" path="res://Assets/Rubbish/pixil-frame-0(1).png" id="1_52ki6"]
+[ext_resource type="AudioStream" uid="uid://dudq63guxvkyq" path="res://Audio/explosion-6055.mp3" id="2_t77lv"]
+
+[sub_resource type="GDScript" id="GDScript_tmq7g"]
+script/source = "extends CharacterBody2D
+
+var health = 10
+var SPEED = 20
+var gravity = ProjectSettings.get_setting(\"physics/2d/default_gravity\")
+var player
+var chase = false
+
+@onready var Explosive_sound : AudioStreamPlayer2D = $Explosive_sound
+
+func _ready():
+	get_node(\"AnimatedSprite2D\").play(\"Idle\")
+func _physics_process(delta):
+	# Gravity for Apple
+	velocity.y += gravity * delta
+	
+	if chase == true:
+		if get_node(\"AnimatedSprite2D\").animation != \"Death\":
+			get_node(\"AnimatedSprite2D\").play(\"Idle\")
+		velocity.x = 0
+		player = get_node(\"../../Player/Player\")
+		var direction = (player.position - self.position).normalized()
+		
+		if direction.x > 0:
+			get_node(\"AnimatedSprite2D\").flip_h = true
+		else:
+			get_node(\"AnimatedSprite2D\").flip_h = false
+		
+#	else:
+#		if get_node(\"AnimatedSprite2D\").animation != \"Death\":
+#			get_node(\"AnimatedSprite2D\").play(\"Idle\")
+#		velocity.x = 0
+	move_and_slide()
+	
+	
+
+func _on_player_detection_body_entered(body):
+	if body.name == \"Player\":
+		chase = false
+
+func _on_player_detection_body_exited(body):
+	if body.name == \"Player\":
+		chase = false
+
+func _on_player_death_body_entered(body):
+	if body.name == \"Player\":
+		death()
+
+#func _on_player_collision_body_entered(body):
+#	if body.name == \"Player\":
+#		Game.playerHP -= 2
+#		death()
+ 
+func death():
+	Game.Rubbish -= Game.Rubbish
+	Utils.saveGame()
+	chase = false
+	get_node(\"AnimatedSprite2D\").play(\"Death\")
+	Explosive_sound.play()
+	await get_node(\"AnimatedSprite2D\").animation_finished
+	self.queue_free()
+"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ty224"]
+atlas = ExtResource("1_52ki6")
+region = Rect2(0, 0, 25, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d50ml"]
+atlas = ExtResource("1_52ki6")
+region = Rect2(25, 0, 25, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nc5og"]
+atlas = ExtResource("1_52ki6")
+region = Rect2(50, 0, 25, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nmfph"]
+atlas = ExtResource("1_52ki6")
+region = Rect2(75, 0, 25, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_goro8"]
+atlas = ExtResource("1_52ki6")
+region = Rect2(0, 50, 25, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ryled"]
+atlas = ExtResource("1_52ki6")
+region = Rect2(25, 50, 25, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1u1tk"]
+atlas = ExtResource("1_52ki6")
+region = Rect2(50, 50, 25, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qvcsj"]
+atlas = ExtResource("1_52ki6")
+region = Rect2(75, 50, 25, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_568et"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"Death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ty224")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d50ml")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nc5og")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nmfph")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_goro8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ryled")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1u1tk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qvcsj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1u1tk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ryled")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_goro8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nmfph")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nc5og")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d50ml")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ty224")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l6ehi"]
+size = Vector2(51, 35)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2fjn8"]
+radius = 38.75
+height = 80.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c73a3"]
+size = Vector2(47, 39)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iw571"]
+size = Vector2(51, 24)
+
+[node name="Rubbish_Can" type="CharacterBody2D"]
+script = SubResource("GDScript_tmq7g")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_568et")
+animation = &"Idle"
+autoplay = "Idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -5.5)
+shape = SubResource("RectangleShape2D_l6ehi")
+
+[node name="PlayerDetection" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetection"]
+position = Vector2(-1, -6)
+scale = Vector2(1.6, 0.480001)
+shape = SubResource("CapsuleShape2D_2fjn8")
+
+[node name="PlayerDeath" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDeath"]
+position = Vector2(-0.5, -7.5)
+shape = SubResource("RectangleShape2D_c73a3")
+
+[node name="PlayerCollision" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerCollision"]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_iw571")
+
+[node name="Explosive_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_t77lv")
+bus = &"ExplosionSFX"
+
+[connection signal="body_entered" from="PlayerDetection" to="." method="_on_player_detection_body_entered" flags=18]
+[connection signal="body_exited" from="PlayerDetection" to="." method="_on_player_detection_body_exited" flags=18]
+[connection signal="body_entered" from="PlayerDeath" to="." method="_on_player_death_body_entered" flags=18]
+[connection signal="body_entered" from="PlayerCollision" to="." method="_on_player_collision_body_entered" flags=18]
