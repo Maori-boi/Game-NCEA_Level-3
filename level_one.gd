@@ -19,8 +19,8 @@ func _process(delta):
 		$Player/Player.position.y = 305
 		$Player/Player.health = 10
 		
-	if Input.is_action_just_pressed("Pause"):
-		pass
+#	if Input.is_action_just_pressed("Pause"):
+#		pass
 		
 #func pauseMenu():
 #	if paused:

@@ -30,7 +30,7 @@ func _process(delta):
 	text = \"Rubbish: \" + str(Game.Rubbish)
 "
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ilnhm"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_idogg"]
 texture = ExtResource("2_vdsg5")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -3369,7 +3369,7 @@ texture = ExtResource("5_bmo6m")
 
 [sub_resource type="TileSet" id="TileSet_tdld4"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_ilnhm")
+sources/0 = SubResource("TileSetAtlasSource_idogg")
 sources/1 = SubResource("TileSetAtlasSource_miemf")
 sources/2 = SubResource("TileSetAtlasSource_nrfwn")
 
@@ -4189,22 +4189,22 @@ sources/0 = SubResource("TileSetAtlasSource_2t7b6")
 sources/1 = SubResource("TileSetAtlasSource_ai4kp")
 sources/2 = SubResource("TileSetAtlasSource_tv21s")
 
-[sub_resource type="Gradient" id="Gradient_jns6s"]
+[sub_resource type="Gradient" id="Gradient_dvc17"]
 interpolation_mode = 2
 offsets = PackedFloat32Array(0, 0.00543478, 0.646739, 0.777174, 1)
 colors = PackedColorArray(0, 0, 0, 1, 0.733333, 0, 0, 1, 0.898039, 0.407843, 0, 1, 0.866667, 0.694118, 0.0470588, 1, 1, 1, 1, 1)
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_2c1fb"]
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ru8py"]
 frequency = 0.004
-offset = Vector3(0, 14944.5, 2987.17)
+offset = Vector3(0, 910.514, 182.098)
 fractal_type = 3
 fractal_octaves = 2
 fractal_lacunarity = 1.4
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_rawid"]
 in_3d_space = true
-color_ramp = SubResource("Gradient_jns6s")
-noise = SubResource("FastNoiseLite_2c1fb")
+color_ramp = SubResource("Gradient_dvc17")
+noise = SubResource("FastNoiseLite_ru8py")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jutmf"]
 size = Vector2(2813, 151.125)

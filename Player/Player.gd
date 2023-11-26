@@ -85,3 +85,8 @@ func _on_area_2d_area_entered(area):
 		get_tree().change_scene_to_file("res://level_two.tscn")
 	if area.is_in_group("portal_two"):
 		get_tree().change_scene_to_file("res://level_three.tscn")
+	if area.is_in_group("portal_three"):
+		position.x = 47
+		position.y = 150
+	if area.is_in_group("portal_four"):
+		get_tree().change_scene_to_file("res://level_three_v_2.tscn")
