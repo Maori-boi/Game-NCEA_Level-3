@@ -1596,7 +1596,7 @@ theme_override_font_sizes/font_size = 15
 text = "                      Flags Mark certain checkpoints 
                       that if you fall in water or lava
                             you will respawn there, 
-       but with whatever health you were previously"
+       but with whatever health you were previously."
 metadata/_edit_use_anchors_ = true
 
 [node name="Destroying_rubbish" type="Label" parent="Notes"]
