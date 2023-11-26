@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://dr58c4f60pwxc"]
+[gd_scene load_steps=33 format=3 uid="uid://dr58c4f60pwxc"]
 
 [ext_resource type="Script" path="res://level_two.gd" id="1_qm6og"]
 [ext_resource type="Texture2D" uid="uid://cnb6vef35n3ad" path="res://Assets/TileSet/Tiles.png" id="2_vdsg5"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://cw17i3k3880g2" path="res://Can.tscn" id="10_p136o"]
 [ext_resource type="Texture2D" uid="uid://byilkepemfstt" path="res://Assets/Portal/Portal_Final.png" id="13_fh6ks"]
 [ext_resource type="AudioStream" uid="uid://da3joirsjuh2r" path="res://Audio/life-of-a-wandering-wizard-15549 (1).mp3" id="14_pu66o"]
+[ext_resource type="PackedScene" uid="uid://4eh3og5i0xj2" path="res://Rubbish_Can.tscn" id="15_shjq7"]
 
 [sub_resource type="GDScript" id="GDScript_yo4y7"]
 script/source = "extends Label
@@ -4195,7 +4196,7 @@ colors = PackedColorArray(0, 0, 0, 1, 0.733333, 0, 0, 1, 0.898039, 0.407843, 0, 
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_2c1fb"]
 frequency = 0.004
-offset = Vector3(0, 2503.35, 500.737)
+offset = Vector3(0, 61191.1, 12234.3)
 fractal_type = 3
 fractal_octaves = 2
 fractal_lacunarity = 1.4
@@ -4369,11 +4370,12 @@ shape = SubResource("RectangleShape2D_buso8")
 
 [node name="Portal" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(4292, 296)
+position = Vector2(4327, 300)
 scale = Vector2(1.77273, 2.18182)
 sprite_frames = SubResource("SpriteFrames_oe86p")
 animation = &"Default"
 autoplay = "Default"
+metadata/_edit_group_ = true
 
 [node name="Portal_Interaction" type="Area2D" parent="Portal" groups=["portal_two"]]
 
@@ -4419,6 +4421,11 @@ position = Vector2(-1, 1)
 
 [node name="Player" parent="Player" instance=ExtResource("5_bgkfi")]
 position = Vector2(91, 307)
+
+[node name="Rubbish Can" type="Node2D" parent="."]
+
+[node name="Rubbish_Can" parent="Rubbish Can" instance=ExtResource("15_shjq7")]
+position = Vector2(4151, 323)
 
 [connection signal="body_entered" from="Spike/Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Spike/Area2D2" to="." method="_on_area_2d_2_body_entered"]
