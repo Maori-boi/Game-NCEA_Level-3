@@ -1,5 +1,6 @@
 [gd_scene load_steps=46 format=3 uid="uid://lec0aljmsx16"]
 
+[ext_resource type="Script" path="res://game_over.gd" id="1_rh8q3"]
 [ext_resource type="Texture2D" uid="uid://cqrqnlx2jpsop" path="res://Assets/Background/Background.png" id="2_wra6r"]
 [ext_resource type="Texture2D" uid="uid://5xvqru1b7s48" path="res://Assets/Background/country-platform-forest.png" id="3_lug3p"]
 [ext_resource type="Texture2D" uid="uid://gw6qp45foxvk" path="res://Assets/1 Biker/Biker_doublejump.png" id="4_q0c8q"]
@@ -7,24 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://c6fm318kiopo8" path="res://Assets/1 Biker/Biker_idle.png" id="6_65678"]
 [ext_resource type="Texture2D" uid="uid://b1h273ikryda6" path="res://Assets/1 Biker/Biker_run.png" id="7_y337l"]
 [ext_resource type="AudioStream" uid="uid://bbtadedf2fxa4" path="res://Audio/cartoon-jump-6462.mp3" id="8_eqwhj"]
-
-[sub_resource type="GDScript" id="GDScript_jhn6m"]
-script/source = "extends Node2D
-
-
-func _ready():
-	Utils.saveGame()
-	Utils.loadGame()
-
-func _on_quit_pressed():
-	get_tree().quit()
-	
-func _on_credits_pressed():
-	get_tree().change_scene_to_file(\"res://credits.tscn\")
-
-func _on_main_menu_pressed():
-	get_tree().change_scene_to_file(\"res://main.tscn\")
-"
 
 [sub_resource type="LabelSettings" id="LabelSettings_nxpgq"]
 font_size = 80
@@ -504,19 +487,16 @@ height = 33.0
 size = Vector2(1592, 54.5)
 
 [node name="Game_over" type="Node2D"]
-script = SubResource("GDScript_jhn6m")
+script = ExtResource("1_rh8q3")
 
-[node name="Main Menu" type="Button" parent="."]
-offset_left = 182.0
-offset_top = 507.0
-offset_right = 651.0
-offset_bottom = 712.0
-tooltip_text = "This is the Play button"
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
+[node name="Main_Menu" type="Button" parent="."]
+offset_left = 181.0
+offset_top = 509.0
+offset_right = 653.0
+offset_bottom = 711.0
+tooltip_text = "This is the Main Menu Button"
 theme_override_font_sizes/font_size = 50
-text = "Play"
-icon_alignment = 1
+text = "Main Menu"
 
 [node name="Quit" type="Button" parent="."]
 offset_left = 744.0
@@ -661,8 +641,7 @@ position = Vector2(1629, 110)
 position = Vector2(-650, 369)
 shape = SubResource("RectangleShape2D_4yr23")
 
-[connection signal="pressed" from="Main Menu" to="." method="_on_play_pressed" flags=18]
-[connection signal="pressed" from="Main Menu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="Main_Menu" to="." method="_on_main_menu_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed" flags=18]
 [connection signal="pressed" from="Credits" to="." method="_on_credits_pressed" flags=18]
 [connection signal="area_entered" from="Player/Player/Area2D" to="Player/Player" method="_on_area_2d_area_entered" flags=18]
