@@ -8,13 +8,9 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 @warning_ignore("unused_parameter")
 func _process(delta):
-	if $Player/Player.health == 0 && $Player/Player.position.x < 1700:
-		$Player/Player.position.x = 50
-		$Player/Player.position.y = 308 
-		$Player/Player.health = 10
-	elif $Player/Player.health == 0 && $Player/Player.position.x < 1850:
+	if $Player/Player.health == 0 && $Player/Player.position.x < 1850:
 		$Player/Player.position.x = 720 
-		$Player/Player.position.y = 280 
+		$Player/Player.position.y = 260 
 		$Player/Player.health = 10
 	elif $Player/Player.health == 0 && $Player/Player.position.x < 2500:
 		$Player/Player.position.x = 1850
