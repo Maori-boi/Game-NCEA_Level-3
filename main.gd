@@ -9,11 +9,11 @@ func _on_quit_pressed():
 	get_tree().quit()
 	
 func _on_credits_pressed():
-	SceneTransition.change_scene_to_file("res://credits.tscn")
+	SceneTransition.change_scene("res://credits.tscn")
 
 #func _on_main_menu_pressed():
 #	get_tree().change_scene_to_file("res://main.tscn")
 
 
 func _on_play_pressed():
-	SceneTransition.change_scene_to_file("res://test_level.tscn")
+	SceneTransition.change_scene("res://test_level.tscn")

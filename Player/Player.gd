@@ -80,8 +80,8 @@ func _physics_process(delta):
 
 func _on_area_2d_area_entered(area):
 	if area.is_in_group("test_portal"):
-		SceneTransition.change_scene_to_file("res://level_one.tscn")
+		SceneTransition.change_scene("res://level_one.tscn")
 	if area.is_in_group("portal"):
-		SceneTransition.change_scene_to_file("res://level_two.tscn")
+		SceneTransition.change_scene("res://level_two.tscn")
 	if area.is_in_group("portal_two"):
-		SceneTransition.change_scene_to_file("res://level_three.tscn")
+		SceneTransition.change_scene("res://level_three.tscn")
