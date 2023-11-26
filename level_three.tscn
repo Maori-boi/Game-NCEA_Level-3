@@ -5300,22 +5300,22 @@ texture = ExtResource("5_woprv")
 sources/0 = SubResource("TileSetAtlasSource_y8y3d")
 sources/1 = SubResource("TileSetAtlasSource_8ah5f")
 
-[sub_resource type="Gradient" id="Gradient_jns6s"]
+[sub_resource type="Gradient" id="Gradient_bhwt4"]
 interpolation_mode = 2
 offsets = PackedFloat32Array(0, 0.00543478, 0.646739, 0.777174, 1)
 colors = PackedColorArray(0, 0, 0, 1, 0.733333, 0, 0, 1, 0.898039, 0.407843, 0, 1, 0.866667, 0.694118, 0.0470588, 1, 1, 1, 1, 1)
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_2c1fb"]
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_6xhsu"]
 frequency = 0.004
-offset = Vector3(0, 62037.6, 12392.8)
+offset = Vector3(0, 70227.3, 14044.3)
 fractal_type = 3
 fractal_octaves = 2
 fractal_lacunarity = 1.4
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_yeqp5"]
 in_3d_space = true
-color_ramp = SubResource("Gradient_jns6s")
-noise = SubResource("FastNoiseLite_2c1fb")
+color_ramp = SubResource("Gradient_bhwt4")
+noise = SubResource("FastNoiseLite_6xhsu")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_idogg"]
 texture = ExtResource("3_qtuje")
@@ -8699,12 +8699,12 @@ script = ExtResource("1_xe4bh")
 [node name="BackGround_One" type="ParallaxLayer" parent="BG"]
 
 [node name="Back" type="Sprite2D" parent="BG/BackGround_One"]
-position = Vector2(546.843, 84.7679)
+position = Vector2(542.843, 84.7679)
 scale = Vector2(2.82731, 3.27993)
 texture = ExtResource("2_rvmhq")
 
 [node name="Back2" type="Sprite2D" parent="BG/BackGround_One"]
-position = Vector2(549.343, 84.7679)
+position = Vector2(540.343, 84.7679)
 scale = Vector2(2.81429, 3.27993)
 texture = ExtResource("3_adgbh")
 
@@ -8714,47 +8714,47 @@ scale = Vector2(2.83772, 3.27993)
 texture = ExtResource("4_hmyxf")
 
 [node name="Back4" type="Sprite2D" parent="BG/BackGround_One"]
-position = Vector2(1631, 85)
+position = Vector2(1628, 85)
 scale = Vector2(2.82731, 3.27993)
 texture = ExtResource("2_rvmhq")
 
 [node name="Back5" type="Sprite2D" parent="BG/BackGround_One"]
-position = Vector2(1629, 85)
+position = Vector2(1626, 85)
 scale = Vector2(2.81429, 3.27993)
 texture = ExtResource("3_adgbh")
 
 [node name="Back6" type="Sprite2D" parent="BG/BackGround_One"]
-position = Vector2(1643, 79)
+position = Vector2(1630, 79)
 scale = Vector2(2.83772, 3.27993)
 texture = ExtResource("4_hmyxf")
 
 [node name="Back7" type="Sprite2D" parent="BG/BackGround_One"]
-position = Vector2(2717, 85)
+position = Vector2(2713, 85)
 scale = Vector2(2.82731, 3.27993)
 texture = ExtResource("2_rvmhq")
 
 [node name="Back8" type="Sprite2D" parent="BG/BackGround_One"]
-position = Vector2(2715, 82)
+position = Vector2(2711, 82)
 scale = Vector2(2.81429, 3.27993)
 texture = ExtResource("3_adgbh")
 
 [node name="Back9" type="Sprite2D" parent="BG/BackGround_One"]
-position = Vector2(2735, 85)
+position = Vector2(2715, 85)
 scale = Vector2(2.83772, 3.27993)
 texture = ExtResource("4_hmyxf")
 
 [node name="Back10" type="Sprite2D" parent="BG/BackGround_One"]
-position = Vector2(3804, 87)
+position = Vector2(3799, 85)
 scale = Vector2(2.82731, 3.27993)
 texture = ExtResource("2_rvmhq")
 
 [node name="Back11" type="Sprite2D" parent="BG/BackGround_One"]
-position = Vector2(3798, 85)
+position = Vector2(3797, 85)
 scale = Vector2(2.81429, 3.27993)
 texture = ExtResource("3_adgbh")
 
 [node name="Back12" type="Sprite2D" parent="BG/BackGround_One"]
-position = Vector2(3800, 85)
+position = Vector2(3801, 85)
 scale = Vector2(2.83772, 3.27993)
 texture = ExtResource("4_hmyxf")
 
