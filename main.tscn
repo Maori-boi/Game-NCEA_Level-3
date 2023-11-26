@@ -500,6 +500,7 @@ theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 50
 text = "Play"
 icon_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Quit" type="Button" parent="."]
 offset_left = 744.0
@@ -510,6 +511,7 @@ tooltip_text = "This is the Quit button"
 theme_override_font_sizes/font_size = 50
 text = "Quit"
 icon_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Credits" type="Button" parent="."]
 offset_left = 1306.0
@@ -520,6 +522,7 @@ tooltip_text = "This is the Credits button"
 theme_override_font_sizes/font_size = 50
 text = "Credits"
 icon_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="BG" type="ParallaxBackground" parent="."]
 
@@ -583,6 +586,7 @@ theme_override_font_sizes/font_size = 80
 text = "DESTROY ALL RUBBISH"
 label_settings = SubResource("LabelSettings_nxpgq")
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Player" type="Node2D" parent="."]
 
