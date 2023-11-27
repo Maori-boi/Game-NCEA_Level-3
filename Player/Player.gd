@@ -71,8 +71,10 @@ func _physics_process(delta):
 	move_and_slide()
 	
 	if Game.playerHP <= 0:
+		Game.Rubbish -= Game.Rubbish
 		queue_free()
 		get_tree().reload_current_scene()
+		
 		
 	if Game.playerHP <= 0:
 		Game.playerHP += healing
@@ -80,13 +82,13 @@ func _physics_process(delta):
 
 func _on_area_2d_area_entered(area):
 	if area.is_in_group("test_portal"):
-		get_tree().change_scene_to_file("res://level_one.tscn")
+		SceneTransition.change_scene("res://level_one.tscn")
 	if area.is_in_group("portal"):
-		get_tree().change_scene_to_file("res://level_two.tscn")
+		SceneTransition.change_scene("res://level_two.tscn")
 	if area.is_in_group("portal_two"):
-		get_tree().change_scene_to_file("res://level_three.tscn")
+		SceneTransition.change_scene("res://level_three.tscn")
 	if area.is_in_group("portal_three"):
 		position.x = 47
 		position.y = 150
 	if area.is_in_group("portal_four"):
-		get_tree().change_scene_to_file("res://level_three_v_2.tscn")
+		SceneTransition.change_scene("res://level_three_v_2.tscn")

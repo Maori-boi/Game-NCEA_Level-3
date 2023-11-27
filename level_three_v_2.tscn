@@ -4473,7 +4473,7 @@ colors = PackedColorArray(0, 0, 0, 1, 0.733333, 0, 0, 1, 0.898039, 0.407843, 0, 
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_2c1fb"]
 frequency = 0.004
-offset = Vector3(0, 17780.7, 3553.49)
+offset = Vector3(0, 10015.1, 2003.2)
 fractal_type = 3
 fractal_octaves = 2
 fractal_lacunarity = 1.4
@@ -4490,7 +4490,7 @@ colors = PackedColorArray(0, 0, 0, 1, 0.180392, 0.843137, 0.164706, 1, 0.368627,
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_7b305"]
 frequency = 0.004
-offset = Vector3(0, 17780.7, 3553.49)
+offset = Vector3(0, 10015.1, 2003.2)
 fractal_type = 3
 fractal_octaves = 2
 fractal_lacunarity = 1.4
@@ -4715,3 +4715,7 @@ position = Vector2(0, -3)
 
 [node name="Player" parent="Player" instance=ExtResource("12_i3xjw")]
 position = Vector2(51, 514)
+
+[connection signal="body_entered" from="Spike/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Spike/Area2D2" to="." method="_on_area_2d_2_body_entered"]
+[connection signal="body_entered" from="Spike/Area2D3" to="." method="_on_area_2d_3_body_entered"]
