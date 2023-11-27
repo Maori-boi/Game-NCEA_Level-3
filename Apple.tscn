@@ -128,12 +128,13 @@ size = Vector2(23.699, 25.1505)
 radius = 22.179
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d3xad"]
-size = Vector2(25.5755, 22.0399)
+size = Vector2(22.4167, 21.2578)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0qxl7"]
-size = Vector2(23.3461, 12.8733)
+size = Vector2(19.5784, 18.9023)
 
 [node name="Apple" type="CharacterBody2D"]
+scale = Vector2(1.54023, 1.64603)
 script = ExtResource("1_lcg2w")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -159,14 +160,14 @@ shape = SubResource("CircleShape2D_qcsbu")
 [node name="PlayerDeath" type="Area2D" parent="."]
 
 [node name="PlayerDeathShape" type="CollisionShape2D" parent="PlayerDeath"]
-position = Vector2(-3, 1.99999)
+position = Vector2(-2.92164, 2.35485)
 scale = Vector2(0.782, 0.907444)
 shape = SubResource("RectangleShape2D_d3xad")
 
 [node name="PlayerCollision" type="Area2D" parent="."]
 
 [node name="PlayerCollisionShape" type="CollisionShape2D" parent="PlayerCollision"]
-position = Vector2(-3, 7.50001)
+position = Vector2(-2.92164, 5.39249)
 scale = Vector2(1.02801, 0.699123)
 shape = SubResource("RectangleShape2D_0qxl7")
 

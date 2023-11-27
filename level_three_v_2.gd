@@ -18,7 +18,7 @@ func _process(delta):
 		$Player/Player.health = 10
 	elif $Player/Player.health == 0 && $Player/Player.position.x < 5000:
 		$Player/Player.position.x = 4500
-		$Player/Player.position.y = 300
+		$Player/Player.position.y = 200
 		$Player/Player.health = 10
 
 func _on_area_2d_body_entered(body):

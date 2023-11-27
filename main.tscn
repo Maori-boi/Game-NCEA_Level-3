@@ -484,7 +484,7 @@ height = 33.0
 height = 33.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4yr23"]
-size = Vector2(1152, 29.25)
+size = Vector2(460, 29.25)
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -595,8 +595,8 @@ metadata/_edit_use_anchors_ = true
 [node name="Player" type="Node2D" parent="."]
 
 [node name="Player" type="CharacterBody2D" parent="Player"]
-position = Vector2(101, 88)
-scale = Vector2(4.45074, 4.75014)
+position = Vector2(276, 331)
+scale = Vector2(7.55395, 9.39437)
 script = SubResource("GDScript_jengj")
 metadata/_edit_group_ = true
 
@@ -649,7 +649,7 @@ bus = &"Jump_SFX"
 position = Vector2(1629, 110)
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-1053, 106.375)
+position = Vector2(-1403, 463)
 shape = SubResource("RectangleShape2D_4yr23")
 
 [connection signal="pressed" from="MarginContainer/Panel/VBoxContainer/Play" to="." method="_on_play_pressed"]
