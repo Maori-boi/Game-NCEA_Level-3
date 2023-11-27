@@ -1,0 +1,80 @@
+[gd_scene load_steps=2 format=3 uid="uid://cxpgrat5vvlob"]
+
+[ext_resource type="Script" path="res://HUD.gd" id="1_t2hws"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_t2hws")
+
+[node name="pause_menu" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.211765, 0.223529, 0.231373, 1)
+
+[node name="Panel" type="Panel" parent="pause_menu"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -75.0
+offset_right = 60.0
+offset_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="pause_menu/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -68.0
+offset_right = 60.0
+offset_bottom = 98.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="pause_menu/Panel/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="resume_button" type="Button" parent="pause_menu/Panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Resume"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="pause_menu/Panel/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="restart_button" type="Button" parent="pause_menu/Panel/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "Restart"
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="pause_menu/Panel/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="main_menu_button" type="Button" parent="pause_menu/Panel/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+text = "Main Menu"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="pause_menu/Panel/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="quit_button" type="Button" parent="pause_menu/Panel/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+text = "Quit"
+
+[connection signal="pressed" from="pause_menu/Panel/VBoxContainer/HBoxContainer/resume_button" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="pause_menu/Panel/VBoxContainer/HBoxContainer2/restart_button" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="pause_menu/Panel/VBoxContainer/HBoxContainer4/main_menu_button" to="." method="_on_main_menu_button_pressed"]
+[connection signal="pressed" from="pause_menu/Panel/VBoxContainer/HBoxContainer3/quit_button" to="." method="_on_quit_button_pressed"]
