@@ -59,7 +59,8 @@ Lava react - CIOSAI石獅
 Scenes and Player Idea/scripts - Chris Tutorials
 Portal design - Stargate inspiration
 Music_one - Yrii Semchyshyn
-Music_two - 17406877"
+Music_two - 17406877
+Music_three - Vitaliy Levkin"
 horizontal_alignment = 1
 
 [node name="Exit" type="Button" parent="Panel"]

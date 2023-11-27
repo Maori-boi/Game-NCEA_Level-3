@@ -1,6 +1,7 @@
-[gd_scene load_steps=45 format=3 uid="uid://lec0aljmsx16"]
+[gd_scene load_steps=46 format=3 uid="uid://lec0aljmsx16"]
 
 [ext_resource type="Script" path="res://game_over.gd" id="1_rh8q3"]
+[ext_resource type="AudioStream" uid="uid://uwibaoteihbv" path="res://Audio/tough-days-are-over-18445.mp3" id="2_6gc4r"]
 [ext_resource type="Texture2D" uid="uid://cqrqnlx2jpsop" path="res://Assets/Background/Background.png" id="2_wra6r"]
 [ext_resource type="Texture2D" uid="uid://gw6qp45foxvk" path="res://Assets/1 Biker/Biker_doublejump.png" id="4_q0c8q"]
 [ext_resource type="Texture2D" uid="uid://dc7n6uilqbbg3" path="res://Assets/1 Biker/Biker_jump.png" id="5_t4xuy"]
@@ -487,6 +488,13 @@ size = Vector2(460, 29.25)
 
 [node name="Game_over" type="Node2D"]
 script = ExtResource("1_rh8q3")
+
+[node name="Gameplay_music" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(0, -1)
+stream = ExtResource("2_6gc4r")
+autoplay = true
+max_distance = 6000.0
+bus = &"Gameplay_music"
 
 [node name="BG" type="ParallaxBackground" parent="."]
 
