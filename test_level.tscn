@@ -1569,8 +1569,10 @@ offset_bottom = 184.0
 [node name="Action_moves" type="Label" parent="Notes"]
 layout_mode = 1
 anchors_preset = -1
-anchor_top = 1.375
-anchor_bottom = 1.375
+anchor_left = -0.075
+anchor_top = 2.175
+anchor_right = -0.075
+anchor_bottom = 2.175
 offset_left = -1250.0
 offset_top = -10.0
 offset_right = -955.0

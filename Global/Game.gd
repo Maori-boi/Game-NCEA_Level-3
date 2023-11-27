@@ -31,6 +31,7 @@ func resume():
 	
 func restart():
 	pause()
+	Game.Rubbish = 0
 	get_tree().reload_current_scene()
 	
 func load_main_menu():

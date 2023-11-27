@@ -9,7 +9,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	#visible = Global.hud_visible
-	if Input.is_action_just_pressed("Pause"):
+	if Input.is_action_just_pressed("pause"):
 		Game.pause()
 
 func _on_pause_button_pressed():

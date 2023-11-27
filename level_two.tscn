@@ -4196,7 +4196,7 @@ colors = PackedColorArray(0, 0, 0, 1, 0.733333, 0, 0, 1, 0.898039, 0.407843, 0, 
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_ru8py"]
 frequency = 0.004
-offset = Vector3(0, 300.958, 60.1909)
+offset = Vector3(0, 87.0672, 17.4135)
 fractal_type = 3
 fractal_octaves = 2
 fractal_lacunarity = 1.4
