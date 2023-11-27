@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://cvfgkj68os63n"]
+[gd_scene load_steps=4 format=3 uid="uid://cvfgkj68os63n"]
 
 [ext_resource type="Script" path="res://credits.gd" id="1_8kl18"]
+[ext_resource type="AudioStream" uid="uid://dkswqq8tg54jl" path="res://Audio/chill-abstract-intention-12099.mp3" id="2_5mqc5"]
 [ext_resource type="Texture2D" uid="uid://cqrqnlx2jpsop" path="res://Assets/Background/Background.png" id="2_uo2l2"]
 
 [node name="Credits" type="Control"]
@@ -11,6 +12,13 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_8kl18")
+
+[node name="Gameplay_music" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(0, -1)
+stream = ExtResource("2_5mqc5")
+autoplay = true
+max_distance = 6000.0
+bus = &"Gameplay_music"
 
 [node name="BG" type="ParallaxBackground" parent="."]
 
@@ -40,6 +48,18 @@ layout_mode = 2
 offset_right = 600.0
 offset_bottom = 550.0
 grow_horizontal = 2
+theme_override_font_sizes/font_size = 25
+text = "Credits:
+
+Cave Background - SlashDashGamesStudio
+Jump & Music - Pixabay SFX
+Parallax Backgrounds- Admurin
+Tilesets - Anokolisa
+Lava react - CIOSAI石獅 
+Scenes and Player Idea/scripts - Chris Tutorials
+Portal design - Stargate inspiration
+Music_one - Yrii Semchyshyn
+Music_two - 17406877"
 horizontal_alignment = 1
 
 [node name="Exit" type="Button" parent="Panel"]

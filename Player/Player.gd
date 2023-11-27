@@ -92,3 +92,5 @@ func _on_area_2d_area_entered(area):
 		position.y = 150
 	if area.is_in_group("portal_four"):
 		SceneTransition.change_scene("res://level_three_v_2.tscn")
+	if area.is_in_group("portal_five"):
+		SceneTransition.change_scene("res://game_over.tscn")
