@@ -12,7 +12,7 @@ func _process(delta):
 		$Player/Player.position.x = 50
 		$Player/Player.position.y = 514
 		$Player/Player.health = 10
-	elif $Player/Player.health == 0 && $Player/Player.position.x < 4300:
+	elif $Player/Player.health == 0 && $Player/Player.position.x < 4500:
 		$Player/Player.position.x = 2700
 		$Player/Player.position.y = 400
 		$Player/Player.health = 10
