@@ -9,6 +9,7 @@ var scene = "res://level_one.tscn"
 var scene_two = "res://level_two.tscn"
 
 @onready var Explosive_sound : AudioStreamPlayer2D = $Explosive_sound
+@onready var Hurt_sound : AudioStreamPlayer2D = $Hurt_sound
 
 func _ready():
 	get_node("AnimatedSprite2D").play("Idle")
@@ -52,6 +53,7 @@ func _on_player_death_body_entered(body):
 func _on_player_collision_body_entered(body):
 	if body.name == "Player":
 		Game.playerHP -= 2
+		Hurt_sound.play()
 		death()
  
 func death():

@@ -11,7 +11,26 @@ var health = 10
 var healing : int = 10
 var portal_play = false
 var max_jumps = 2
- 
+#var apple
+#var apple2
+#var apple3
+#var apple4
+#var apple5
+#var apple6
+#var apple7
+#var apple8
+#var apple9
+#var apple10
+#var apple11
+#var apple12
+#var can
+#var can2
+#var can3
+#var can4
+#var can5
+#var can6
+#var can7
+
 @onready var anim = get_node("AnimationPlayer")
 @onready var Jump_sound : AudioStreamPlayer2D = $Jump_sound
 
@@ -68,7 +87,29 @@ func _physics_process(delta):
 			
 	if velocity.y > 0:
 		anim.play("Fall")
+	
+#	apple = get_node("../../Rubbish/Apple")
+#	apple2 = get_node("../../Rubbish/Apple2")
+#	apple3 = get_node("../../Rubbish/Apple3")
+#	apple4 = get_node("../../Rubbish/Apple4")
+#	apple5 = get_node("../../Rubbish/Apple5")
+#	apple6 = get_node("../../Rubbish/Apple6")
+#	apple7 = get_node("../../Rubbish/Apple7")
+#	apple8 = get_node("../../Rubbish/Apple8")
+#	apple9 = get_node("../../Rubbish/Apple9")
+#	apple10 = get_node("../../Rubbish/Apple10")
+#	apple11 = get_node("../../Rubbish/Apple11")
+#	apple12 = get_node("../../Rubbish/Apple12")
+#	can = get_node("../../Rubbish/Can")
+#	can2 = get_node("../../Rubbish/Can2")
+#	can3 = get_node("../../Rubbish/Can3")
+#	can4 = get_node("../../Rubbish/Can4")
+#	can5 = get_node("../../Rubbish/Can5")
+#	can6 = get_node("../../Rubbish/Can6")
+#	can7 = get_node("../../Rubbish/Can7")
 	move_and_slide()
+
+	
 	
 	if Game.playerHP <= 0:
 		Game.Rubbish -= Game.Rubbish

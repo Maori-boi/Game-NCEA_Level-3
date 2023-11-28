@@ -1,10 +1,11 @@
-[gd_scene load_steps=22 format=3 uid="uid://cw17i3k3880g2"]
+[gd_scene load_steps=23 format=3 uid="uid://cw17i3k3880g2"]
 
 [ext_resource type="Script" path="res://Can.gd" id="1_bhhi7"]
 [ext_resource type="Texture2D" uid="uid://duo1bk8kc4n6" path="res://Explosions/explosion-6.png" id="1_qqu5r"]
 [ext_resource type="Texture2D" uid="uid://ce76jlsqmrsgo" path="res://Assets/Rubbish/Apple Final2.png" id="2_gewqa"]
 [ext_resource type="Texture2D" uid="uid://hw84it4sa701" path="res://Assets/Rubbish/Rubbish.png" id="4_qphum"]
 [ext_resource type="AudioStream" uid="uid://dudq63guxvkyq" path="res://Audio/explosion-6055.mp3" id="5_t8mjc"]
+[ext_resource type="AudioStream" uid="uid://clvwt5dxyohp7" path="res://Audio/accidentally-punching-the-floor-99814.mp3" id="6_i2qnx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ie2ur"]
 atlas = ExtResource("1_qqu5r")
@@ -174,6 +175,10 @@ shape = SubResource("RectangleShape2D_iw571")
 [node name="Explosive_sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_t8mjc")
 bus = &"ExplosionSFX"
+
+[node name="Hurt_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_i2qnx")
+bus = &"Hurt_SFX"
 
 [connection signal="body_entered" from="PlayerDetection" to="." method="_on_player_detection_body_entered"]
 [connection signal="body_exited" from="PlayerDetection" to="." method="_on_player_detection_body_exited"]

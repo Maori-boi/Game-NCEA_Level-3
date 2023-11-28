@@ -1,6 +1,7 @@
-[gd_scene load_steps=15 format=3 uid="uid://4eh3og5i0xj2"]
+[gd_scene load_steps=16 format=3 uid="uid://4eh3og5i0xj2"]
 
 [ext_resource type="Texture2D" uid="uid://dknnxwjt1n8bj" path="res://Assets/Rubbish/pixil-frame-0(1).png" id="1_52ki6"]
+[ext_resource type="AudioStream" uid="uid://ds144dmdsodmc" path="res://Audio/success_bell-6776.mp3" id="2_2dseh"]
 
 [sub_resource type="GDScript" id="GDScript_tmq7g"]
 script/source = "extends CharacterBody2D
@@ -11,7 +12,7 @@ var gravity = ProjectSettings.get_setting(\"physics/2d/default_gravity\")
 var player
 var chase = false
 
-#@onready var Explosive_sound : AudioStreamPlayer2D = $Explosive_sound
+@onready var Bell_sound : AudioStreamPlayer2D = $Bell_sound
 
 func _ready():
 	get_node(\"AnimatedSprite2D\").play(\"Idle\")
@@ -52,7 +53,7 @@ func death():
 	Utils.saveGame()
 	chase = false
 	get_node(\"AnimatedSprite2D\").play(\"Death\")
-	#Explosive_sound.play()
+	Bell_sound.play()
 	await get_node(\"AnimatedSprite2D\").animation_finished
 	self.queue_free()
 "
@@ -181,6 +182,13 @@ shape = SubResource("CapsuleShape2D_2fjn8")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDeath"]
 position = Vector2(-0.5, -7.5)
 shape = SubResource("RectangleShape2D_c73a3")
+
+[node name="Bell_sound" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(0, -1)
+stream = ExtResource("2_2dseh")
+autoplay = true
+max_distance = 6000.0
+bus = &"Gameplay_music"
 
 [connection signal="body_entered" from="PlayerDetection" to="." method="_on_player_detection_body_entered" flags=18]
 [connection signal="body_exited" from="PlayerDetection" to="." method="_on_player_detection_body_exited" flags=18]
